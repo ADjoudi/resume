@@ -3,9 +3,7 @@ import "./Input.css";
 
 function Input({ id = "input", name = "input", inputValue = "" }) {
   const addLabelAnimation = (e) => {
-    if (!e.target.nextElementSibling.classList.contains("label-up")) {
-      e.target.nextElementSibling.classList.add("label-up");
-    }
+    e.target.nextElementSibling.classList.add("label-up");
   };
   const handleLabelAnimation = (e) => {
     if (e.target.value.length <= 0) {
