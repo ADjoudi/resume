@@ -1,24 +1,26 @@
 .input-container {
   position: relative;
-  width: fit-content;
   height: fit-content;
+  width: 100%;
 }
 
 input {
+  width: 100%;
   background-color: var(--bg);
   border: var(--border);
   padding: 1rem 1rem 0.2rem 1rem;
   font-size: 1rem;
   line-height: 200%;
-  transition: all 0.2s ease;
 }
 
 input:focus {
-  transform: scale(1.04);
-  box-shadow: 0rem 0.8rem 0px -0.4rem var(--line);
+  transform: scale(1.04) translateY(-0.4rem);
+  box-shadow: 0rem 0.6rem 0px -0.4rem var(--line);
   outline: none;
 }
-
+input:focus + label {
+  transform: translateX(-0.5rem) translateY(-0.4rem);
+}
 label {
   position: absolute;
   top: 1rem;
@@ -27,11 +29,10 @@ label {
   color: var(--line-op);
   font-size: 1rem;
   transform: scale(1);
-  transition: all 0.2s ease;
 }
 
 .label-up {
   font-size: 0.8rem;
   top: 0.5rem;
-  transform: scale(1.04);
+  transform: translateX(-0.1rem);
 }

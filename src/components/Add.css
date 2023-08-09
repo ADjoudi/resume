@@ -1,0 +1,8 @@
+.add-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.add-btn h4 {
+  font-size: 1rem;
+}

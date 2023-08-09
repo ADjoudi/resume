@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./Input.css";
+import "./myInput.css";
 
-function Input({ id = "input", name = "input", inputValue = "" }) {
+function Input({ id = "input", name = "input" }) {
   const addLabelAnimation = (e) => {
     e.target.nextElementSibling.classList.add("label-up");
   };
@@ -14,7 +14,7 @@ function Input({ id = "input", name = "input", inputValue = "" }) {
     <div className="input-container">
       <input
         id={id}
-        name={inputValue}
+        name={name}
         onFocus={addLabelAnimation}
         onBlur={handleLabelAnimation}
       />

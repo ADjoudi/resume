@@ -1,0 +1,24 @@
+.card {
+  border: var(--border);
+  padding: 1rem 1rem 3rem 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1.4rem;
+}
+
+.card .years {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+}
+.card textarea {
+  grid-column: 1/3;
+  grid-row: 3;
+}
+.card div:last-child {
+  grid-row: 4;
+}
