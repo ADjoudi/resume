@@ -3,6 +3,7 @@
 :root {
   --bg: #faffde;
   --secondary: #b8fc64;
+  --secondary-hover: #7ecf1b;
   --line: #000718;
   --line-op: #00071891;
   --border: 0.3rem solid var(--line);
@@ -20,8 +21,10 @@ body {
 
 .app {
   width: 100vw;
+  height: max-content;
   display: flex;
   flex-direction: row;
+  align-items: start;
   background-color: var(--bg);
 }
 
@@ -51,6 +54,7 @@ body {
   border: var(--border);
   padding: 1rem 1rem 0.2rem 1rem;
   font-size: 1rem;
+  resize: none;
 }
 
 .inputs textarea:focus {

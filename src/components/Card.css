@@ -1,24 +1,40 @@
-.card {
+.inputs .card-container {
   border: var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.inputs .card {
   padding: 1rem 1rem 3rem 1rem;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 1.4rem;
+
+  max-height: 9999px;
+  overflow: hidden;
+}
+.inputs .card-container .details {
+  max-height: 0px;
+  padding: 0rem 1rem 0rem 1rem;
+  transition: padding 0.2 ease;
 }
 
-.card .years {
+.inputs .card .years {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: start;
   gap: 0.5rem;
 }
-.card textarea {
-  grid-column: 1/3;
-  grid-row: 3;
+.inputs .card-container header {
+  position: relative;
+  padding: 1rem;
+  cursor: pointer;
 }
-.card div:last-child {
-  grid-row: 4;
+.inputs .card-container header:hover {
+  background-color: var(--secondary-hover);
+}
+
+.inputs .card-container header h2 {
+  font-size: 1rem;
 }

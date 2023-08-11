@@ -1,8 +1,15 @@
-.add-btn {
+.inputs .add-btn {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 }
-.add-btn h4 {
+.inputs .add-btn:hover {
+  cursor: pointer;
+}
+.inputs .add-btn h4 {
   font-size: 1rem;
+}
+
+.inputs .add-btn:hover img {
+  transform: rotate(180deg);
 }
