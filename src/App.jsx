@@ -145,9 +145,10 @@ function App() {
   };
   const handleLinkChange = (e, index) => {
     const { id, value } = e.target;
+    const newId = id.match("[^0-9]+");
     setLinks((prevLinks) => {
       const updatedLinks = prevLinks.map((link, i) => {
-        i === index ? { [id]: value } : link;
+        return i === index ? { ...link, [newId[0]]: value } : link;
       });
       return updatedLinks;
     });
@@ -157,10 +158,6 @@ function App() {
       return prevLinks.concat([{ label: "", link: "" }]);
     });
   };
-
-  useEffect(() => {
-    console.log(experience);
-  }, [experience]);
   return (
     <div className="app">
       <div className="inputs">
@@ -260,7 +257,9 @@ function App() {
           </section>
         </form>
       </div>
-      <div className="outputs"></div>
+      <div className="outputs">
+        <div className="box"></div>
+      </div>
     </div>
   );
 }

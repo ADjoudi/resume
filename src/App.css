@@ -18,9 +18,12 @@ body {
   font-family: "Concert One", cursive;
   transition: all 0.2s ease;
 }
-
+body {
+  width: 100%;
+}
 .app {
-  width: 100vw;
+  position: relative;
+  width: 100%;
   height: max-content;
   display: flex;
   flex-direction: row;
@@ -87,5 +90,16 @@ body {
 }
 
 .outputs {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+.box {
+  height: 40rem;
+  width: 30rem;
+  background-color: #000718;
 }

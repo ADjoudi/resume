@@ -10,13 +10,13 @@ function Link({ index, link, handleInfoChange }) {
         id={"label" + index}
         label="Label"
         value={link.label}
-        handleInfoChange={handleInfoChange}
+        handleInfoChange={(e) => handleInfoChange(e, index)}
       />
       <Input
         id={"link" + index}
         label="Link"
         value={link.link}
-        handleInfoChange={handleInfoChange}
+        handleInfoChange={(e) => handleInfoChange(e, index)}
       />
     </div>
   );
