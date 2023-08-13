@@ -3,7 +3,7 @@
 :root {
   --bg: #faffde;
   --secondary: #b8fc64;
-  --secondary-hover: #7ecf1b;
+  --secondary-hover: rgb(150, 228, 54);
   --line: #000718;
   --line-op: #00071891;
   --border: 0.3rem solid var(--line);
@@ -20,11 +20,12 @@ body {
 }
 body {
   width: 100%;
+  background-color: var(--bg);
 }
 .app {
   position: relative;
   width: 100%;
-  height: max-content;
+  height: 100%;
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -32,8 +33,10 @@ body {
 }
 
 .inputs {
-  width: 40%;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
 }
 
 .inputs form {
@@ -90,16 +93,57 @@ body {
 }
 
 .outputs {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   position: sticky;
   top: 0;
-  width: 100%;
+  padding: 0.5rem;
 }
-.box {
-  height: 40rem;
-  width: 30rem;
-  background-color: #000718;
+
+.outputs .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  width: 80%;
+}
+.outputs .header .choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 0.5rem;
+}
+.outputs .header .choices .choice {
+  width: 6rem;
+  aspect-ratio: 1/1.414;
+  border: var(--border);
+  background-color: white;
+}
+.outputs .header .choices .choice:hover {
+  cursor: pointer;
+}
+.outputs .header .choices .choice-clicked {
+  transform: scale(1.02) translateY(-0.4rem);
+  box-shadow: 0rem 0.6rem 0px -0.4rem var(--line);
+  outline: none;
+}
+
+.outputs .header button {
+  margin-left: auto;
+  background-color: var(--line);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: var(--bg);
+}
+.outputs .output {
+  flex: 1;
+  width: 80%;
+  aspect-ratio: 1/1.414;
+  border: var(--border);
+  background-color: white;
 }

@@ -4,6 +4,7 @@ import Input from "./components/myInput.jsx";
 import Card from "./components/Card";
 import Add from "./components/Add";
 import Link from "./components/Link";
+import Cv1 from "./components/Cv1";
 
 function App() {
   const [info, setInfo] = useState({
@@ -158,6 +159,15 @@ function App() {
       return prevLinks.concat([{ label: "", link: "" }]);
     });
   };
+
+  const handleChoiceClick = (e) => {
+    const children = Array.from(e.currentTarget.children);
+    children.map((child) =>
+      child === e.target
+        ? child.classList.add("choice-clicked")
+        : child.classList.remove("choice-clicked")
+    );
+  };
   return (
     <div className="app">
       <div className="inputs">
@@ -258,7 +268,18 @@ function App() {
         </form>
       </div>
       <div className="outputs">
-        <div className="box"></div>
+        <div className="header">
+          <div className="choices" onClick={handleChoiceClick}>
+            <div className="choice"></div>
+            <div className="choice"></div>
+            <div className="choice"></div>
+            <div className="choice"></div>
+          </div>
+          <button>DOWNLOAD</button>
+        </div>
+        <div className="output">
+          <Cv1 />
+        </div>
       </div>
     </div>
   );

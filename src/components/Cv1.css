@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+#cv1 * {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+#cv1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+#cv1 header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-bottom: 2px solid rgb(214, 214, 214);
+}
+#cv1 header h2 {
+  border: none;
+}
+#cv1 section {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+}
+
+#cv1 h1 {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+#cv1 h2 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+#cv1 P,
+#cv1 li {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+#cv1 .intro {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+#cv1 ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: disc;
+  padding-left: 2rem;
+}
+#cv1 h2 {
+  border-bottom: 2px solid rgb(214, 214, 214);
+}
+#cv1 #education > ul,
+#cv1 #experience > ul {
+  list-style: none;
+  padding: 0;
+}
