@@ -10,9 +10,9 @@ function App() {
   const [info, setInfo] = useState({
     fname: "",
     lname: "",
-    job: "",
+    currentJobTitle: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     address: "",
   });
   const [summary, setSummary] = useState("");
@@ -21,7 +21,7 @@ function App() {
   ]);
   const [experience, setExperience] = useState([
     {
-      job: "",
+      "job title": "",
       company: "",
       start: "",
       end: "",
@@ -168,6 +168,9 @@ function App() {
         : child.classList.remove("choice-clicked")
     );
   };
+  useEffect(() => {
+    console.log(info, summary, education, experience, info);
+  }, [info, summary, education, experience, links]);
   return (
     <div className="app">
       <div className="inputs">
@@ -217,13 +220,14 @@ function App() {
             <h1>Education</h1>
             {education.map((card, index) => (
               <Card
-                prefix="education"
                 key={index}
                 index={index}
-                title={"Degree"}
-                location={"School"}
-                start={"Start Year"}
-                end={"End Year"}
+                labels={{
+                  title: "Degree",
+                  location: "School",
+                  start: "Start Year",
+                  end: "End Year",
+                }}
                 highlights={card.highlights}
                 handleInfoChange={handleEducationChange}
                 handleHighlightChange={handleEducationHighlightChange}
@@ -237,13 +241,14 @@ function App() {
             <h1>Work Experience</h1>
             {experience.map((card, index) => (
               <Card
-                prefix="experience"
                 key={index}
                 index={index}
-                title={"Job Title"}
-                location={"Company"}
-                start={"Start Year"}
-                end={"End Year"}
+                labels={{
+                  title: "Job Title",
+                  location: "Company",
+                  start: "Start Year",
+                  end: "End Year",
+                }}
                 highlights={card.highlights}
                 handleInfoChange={handleExperienceChange}
                 handleHighlightChange={handleExperienceHighlightChange}
@@ -278,7 +283,7 @@ function App() {
           <button>DOWNLOAD</button>
         </div>
         <div className="output">
-          <Cv1 />
+          <Cv1 outputs={{ info, summary, experience, education, links }} />
         </div>
       </div>
     </div>

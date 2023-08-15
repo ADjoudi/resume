@@ -1,102 +1,77 @@
 import React from "react";
 import "./Cv1.css";
 
-export default function Cv1() {
+export default function Cv1({ outputs }) {
+  const { info, summary, experience, education, links } = outputs;
+  const { fname, lname, currentJobTitle, email, phoneNumber, address } = info;
   return (
     <div id="cv1">
       <header>
-        <h1>Your Name</h1>
-        <h2>JOB TITLE OR AREA OF EXPERTIES</h2>
+        <h1>{fname || lname ? fname + " " + lname : "Your Name"}</h1>
+        <h2>
+          {currentJobTitle
+            ? currentJobTitle.toUpperCase()
+            : "JOB TITLE OR AREA OF EXPERTIES"}
+        </h2>
       </header>
       <div className="intro">
         <section id="contact">
           <h2>CONTACT</h2>
           <ul>
-            <li>phone number</li>
-            <li>address</li>
-            <li>links</li>
+            <li>{phoneNumber ? phoneNumber : "Phone Number"}</li>
+            <li>{email ? email : "Email"}</li>
+            <li>{address ? address : "Address"}</li>
+            {links[0].label &&
+              links.map((link, index) => (
+                <li key={index}>
+                  <a href={link.link}>{link.label}</a>
+                </li>
+              ))}
           </ul>
         </section>
         <section id="summary">
           <h2>PROFESSIONAL SUMMARY</h2>
-          <p>
-            As a dedicated and enthusiastic junior web developer, I am
-            passionate about creating engaging and user-friendly web
-            experiences. With a solid foundation in HTML, CSS, and JavaScript, I
-            am eager to contribute my skills to a dynamic team focused on
-            delivering high-quality projects. I am a quick learner with a strong
-            attention to detail, always striving to stay updated with the latest
-            industry trends and best practices. My goal is to leverage my
-            technical skills and collaborate effectively to build innovative and
-            responsive websites that exceed client expectations.
-          </p>
+          <p>{summary}</p>
         </section>
       </div>
       <section id="experience">
         <h2>EXPERIENCE</h2>
         <ul>
-          <li>
-            <h3>Job title</h3>
-            <h3>Company</h3>
-            <h3>Years</h3>
-            <ul>
-              <li>
-                Proficient in HTML5, CSS3, and JavaScript, with a focus on
-                writing clean and maintainable code.
+          {experience.map((exp, index) => {
+            const { "job title": job, company, start, end, highlights } = exp;
+            return (
+              <li key={index}>
+                <h3>{job ? job : "Job Title"}</h3>
+                <h4>{company ? company : "Company"}</h4>
+                <h4>{start || end ? start + " - " + end : "Years"}</h4>
+                <ul>
+                  {highlights.map((highlight, index) => (
+                    <li key={index}>{highlight}</li>
+                  ))}
+                </ul>
               </li>
-              <li>
-                Experience in building responsive and mobile-friendly websites
-                to ensure optimal user experiences across devices.
-              </li>
-              <li>
-                Familiarity with front-end frameworks such as React.js, enabling
-                the development of dynamic and interactive web applications.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h3>Job title</h3>
-            <h3>Company</h3>
-            <h3>Years</h3>
-            <ul>
-              <li>
-                Proficient in HTML5, CSS3, and JavaScript, with a focus on
-                writing clean and maintainable code.
-              </li>
-              <li>
-                Experience in building responsive and mobile-friendly websites
-                to ensure optimal user experiences across devices.
-              </li>
-              <li>
-                Familiarity with front-end frameworks such as React.js, enabling
-                the development of dynamic and interactive web applications.
-              </li>
-            </ul>
-          </li>
+            );
+          })}
         </ul>
       </section>
       <section id="education">
         <h2>EDUCATION</h2>
         <ul>
-          <li>
-            <h3>Degree</h3>
-            <h3>School</h3>
-            <h3>Years</h3>
-            <ul>
-              <li>
-                Proficient in HTML5, CSS3, and JavaScript, with a focus on
-                writing clean and maintainable code.
+          {education.map((edu, index) => {
+            const { degree, school, start, end, highlights } = edu;
+            return (
+              <li key={index}>
+                <h3>{degree ? degree : "Job Title"}</h3>
+                <h4>{school ? school : "Company"}</h4>
+                <h4>{start || end ? start + " - " + end : "Years"}</h4>
+                <ul>
+                  {highlights.map((highlight, index) => (
+                    <li key={index}>{highlight}</li>
+                  ))}
+                </ul>
               </li>
-              <li>
-                Experience in building responsive and mobile-friendly websites
-                to ensure optimal user experiences across devices.
-              </li>
-              <li>
-                Familiarity with front-end frameworks such as React.js, enabling
-                the development of dynamic and interactive web applications.
-              </li>
-            </ul>
-          </li>
+            );
+          })}
         </ul>
       </section>
     </div>

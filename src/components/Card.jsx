@@ -6,17 +6,14 @@ import Highlights from "./Highlights";
 import Add from "./Add";
 
 function Card({
-  prefix,
   index,
-  title,
-  location,
-  start,
-  end,
+  labels,
   highlights,
   handleInfoChange,
   handleHighlightChange,
   addHighlight,
 }) {
+  const { title, location, start, end } = labels;
   const toggleDetails = (e) => {
     e.currentTarget.nextElementSibling.classList.toggle("details");
   };
@@ -27,24 +24,24 @@ function Card({
       </header>
       <div className="card">
         <Input
-          id={prefix + title}
+          id={title.toLowerCase()}
           label={title}
           handleInfoChange={(e) => handleInfoChange(e, index)}
         />
         <Input
-          id={prefix + location}
+          id={location.toLowerCase()}
           label={location}
           handleInfoChange={(e) => handleInfoChange(e, index)}
         />
         <div className="years">
           <Input
-            id={prefix + start}
+            id="start"
             label={start}
             handleInfoChange={(e) => handleInfoChange(e, index)}
           />
           <img src={arrow} alt="->" />
           <Input
-            id={prefix + end}
+            id="end"
             label={end}
             handleInfoChange={(e) => handleInfoChange(e, index)}
           />

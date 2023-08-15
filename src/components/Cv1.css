@@ -48,6 +48,7 @@
 #cv1 .intro {
   display: flex;
   flex-direction: row;
+  align-self: start;
   gap: 1rem;
 }
 
@@ -60,6 +61,10 @@
 }
 #cv1 h2 {
   border-bottom: 2px solid rgb(214, 214, 214);
+}
+#cv1 #education,
+#cv1 #experience {
+  align-self: start;
 }
 #cv1 #education > ul,
 #cv1 #experience > ul {

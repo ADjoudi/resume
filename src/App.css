@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
-
 :root {
   --bg: #faffde;
   --secondary: #b8fc64;
@@ -122,7 +121,8 @@ body {
   width: 6rem;
   aspect-ratio: 1/1.414;
   border: var(--border);
-  background-color: white;
+  background-image: url("./assets/cv1.png");
+  background-size: cover;
 }
 .outputs .header .choices .choice:hover {
   cursor: pointer;
