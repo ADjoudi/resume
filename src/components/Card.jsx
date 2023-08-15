@@ -1,17 +1,20 @@
 import React from "react";
 import "./Card.css";
+import deleteIcon from "../assets/delete-icon.svg";
 import Input from "./myInput.jsx";
 import arrow from "../assets/arrow.svg";
 import Highlights from "./Highlights";
-import Add from "./Add";
+import Delete from "./Delete";
 
 function Card({
   index,
   labels,
+  headerTitle,
   highlights,
   handleInfoChange,
   handleHighlightChange,
   addHighlight,
+  remove,
 }) {
   const { title, location, start, end } = labels;
   const toggleDetails = (e) => {
@@ -20,7 +23,8 @@ function Card({
   return (
     <div className="card-container" key={index}>
       <header onClick={toggleDetails}>
-        <h2>{title.length === 0 ? "------" : title}</h2>
+        <h2>{headerTitle ? headerTitle : "------"}</h2>
+        <Delete remove={() => remove(index)} />
       </header>
       <div className="card">
         <Input

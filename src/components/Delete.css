@@ -1,0 +1,16 @@
+.inputs .delete-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.inputs .delete-btn h3 {
+  font-size: 1rem;
+}
+.inputs .delete-btn:hover {
+  cursor: pointer;
+}
+.inputs .delete-btn:hover img {
+  transform: rotate(360deg);
+}

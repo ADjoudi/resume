@@ -168,6 +168,19 @@ function App() {
         : child.classList.remove("choice-clicked")
     );
   };
+
+  const deleteEducation = (i) => {
+    if (education.length > 1)
+      setEducation((prevEducation) =>
+        prevEducation.filter((edu, index) => index !== i)
+      );
+  };
+  const deleteExperience = (i) => {
+    if (experience.length > 1)
+      setExperience((prevExperience) =>
+        prevExperience.filter((exp, index) => index !== i)
+      );
+  };
   useEffect(() => {
     console.log(info, summary, education, experience, info);
   }, [info, summary, education, experience, links]);
@@ -228,10 +241,12 @@ function App() {
                   start: "Start Year",
                   end: "End Year",
                 }}
+                headerTitle={card.degree}
                 highlights={card.highlights}
                 handleInfoChange={handleEducationChange}
                 handleHighlightChange={handleEducationHighlightChange}
                 addHighlight={addEducationHighlight}
+                remove={deleteEducation}
               />
             ))}
             <Add add={addEducationCard} />
@@ -249,10 +264,12 @@ function App() {
                   start: "Start Year",
                   end: "End Year",
                 }}
+                headerTitle={card["job title"]}
                 highlights={card.highlights}
                 handleInfoChange={handleExperienceChange}
                 handleHighlightChange={handleExperienceHighlightChange}
                 addHighlight={addExperienceHighlight}
+                remove={deleteExperience}
               />
             ))}
             <Add add={addExperienceCard} />
