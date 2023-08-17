@@ -42,6 +42,7 @@ body {
   background-color: var(--secondary);
   border: var(--border);
   margin: 0.5rem;
+  margin-right: 0rem;
   padding: 5rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -93,9 +94,9 @@ body {
 .outputs {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
   gap: 1rem;
   position: sticky;
   top: 0;
@@ -103,21 +104,22 @@ body {
 }
 
 .outputs .header {
+  height: 98vh;
   display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: start;
-  width: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
 }
 .outputs .header .choices {
   display: flex;
-  flex-direction: row;
-  justify-content: start;
+  flex-direction: column;
+  justify-content: end;
   align-items: start;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 .outputs .header .choices .choice {
-  width: 6rem;
+  width: 8rem;
   aspect-ratio: 1/1.414;
   border: var(--border);
   background-image: url("./assets/cv1.png");
@@ -133,16 +135,13 @@ body {
 }
 
 .outputs .header button {
-  margin-left: auto;
   background-color: var(--line);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.9rem;
   font-size: 1rem;
   color: var(--bg);
 }
 .outputs .output {
   flex: 1;
-  width: 80%;
-  aspect-ratio: 1/1.414;
-  border: var(--border);
-  background-color: white;
+  display: flex;
+  justify-content: center;
 }

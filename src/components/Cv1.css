@@ -4,12 +4,16 @@
   font-weight: 400;
 }
 #cv1 {
+  height: 98vh;
+  aspect-ratio: 1/1.414;
+  border: var(--border);
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   gap: 1rem;
-  padding: 2rem;
+  padding: 1rem;
 }
 #cv1 header {
   width: 100%;

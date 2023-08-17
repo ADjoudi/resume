@@ -290,17 +290,17 @@ function App() {
         </form>
       </div>
       <div className="outputs">
+        <div className="output">
+          <Cv1 outputs={{ info, summary, experience, education, links }} />
+        </div>
         <div className="header">
+          <button>DOWNLOAD</button>
           <div className="choices" onClick={handleChoiceClick}>
             <div className="choice"></div>
             <div className="choice"></div>
             <div className="choice"></div>
             <div className="choice"></div>
           </div>
-          <button>DOWNLOAD</button>
-        </div>
-        <div className="output">
-          <Cv1 outputs={{ info, summary, experience, education, links }} />
         </div>
       </div>
     </div>
