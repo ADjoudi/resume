@@ -174,7 +174,6 @@ function App() {
 
   const handleChoiceClick = (e) => {
     const children = Array.from(e.currentTarget.children);
-    children[0].click();
     children.map((child) =>
       child === e.target
         ? child.classList.add("choice-clicked")
