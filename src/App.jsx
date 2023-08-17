@@ -159,16 +159,6 @@ function App() {
       return prevLinks.concat([{ label: "", link: "" }]);
     });
   };
-
-  const handleChoiceClick = (e) => {
-    const children = Array.from(e.currentTarget.children);
-    children.map((child) =>
-      child === e.target
-        ? child.classList.add("choice-clicked")
-        : child.classList.remove("choice-clicked")
-    );
-  };
-
   const deleteEducation = (i) => {
     if (education.length > 1)
       setEducation((prevEducation) =>
@@ -181,9 +171,19 @@ function App() {
         prevExperience.filter((exp, index) => index !== i)
       );
   };
+
+  const handleChoiceClick = (e) => {
+    const children = Array.from(e.currentTarget.children);
+    children[0].click();
+    children.map((child) =>
+      child === e.target
+        ? child.classList.add("choice-clicked")
+        : child.classList.remove("choice-clicked")
+    );
+  };
   useEffect(() => {
-    console.log(info, summary, education, experience, info);
-  }, [info, summary, education, experience, links]);
+    document.getElementsByClassName("choice")[0].click();
+  });
   return (
     <div className="app">
       <div className="inputs">
