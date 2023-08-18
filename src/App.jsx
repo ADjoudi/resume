@@ -5,6 +5,7 @@ import Card from "./components/Card";
 import Add from "./components/Add";
 import Link from "./components/Link";
 import Cv1 from "./components/Cv1";
+import html2pdf from "html2pdf.js";
 
 function App() {
   const [info, setInfo] = useState({
@@ -180,9 +181,14 @@ function App() {
         : child.classList.remove("choice-clicked")
     );
   };
+  const downloadPdf = () => {
+    var element = document.getElementById("cv1");
+    console.log(element, html2pdf);
+    html2pdf(element);
+  };
   useEffect(() => {
     document.getElementsByClassName("choice")[0].click();
-  });
+  }, []);
   return (
     <div className="app">
       <div className="inputs">
@@ -293,7 +299,7 @@ function App() {
           <Cv1 outputs={{ info, summary, experience, education, links }} />
         </div>
         <div className="header">
-          <button>DOWNLOAD</button>
+          <button onClick={downloadPdf}>DOWNLOAD</button>
           <div className="choices" onClick={handleChoiceClick}>
             <div className="choice"></div>
             <div className="choice"></div>

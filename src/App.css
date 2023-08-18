@@ -116,6 +116,9 @@ body {
   gap: 1rem;
   padding-right: 1rem;
 }
+.outputs .header button {
+  cursor: pointer;
+}
 .outputs .header .choices {
   display: flex;
   flex-direction: column;
@@ -146,7 +149,11 @@ body {
   color: var(--bg);
 }
 .outputs .output {
-  flex: 1;
+  margin: auto;
   display: flex;
   justify-content: center;
+  height: 98vh;
+  aspect-ratio: 1/1.414;
+  border: var(--border);
+  background-color: white;
 }
